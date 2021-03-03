@@ -48,7 +48,7 @@ dates = []
 
 for row in csv_file:
     try:
-        sn = row[NAME]
+        N = row[NAME]
         high = int(row[MAX])
         low = int(row[MIN])
         converted_date = datetime.strptime(row[DATE], "%Y-%m-%d")
@@ -82,7 +82,7 @@ plt.fill_between(dates, highs, lows, facecolor="blue", alpha=0.3)
 plt.plot(dates, highs, c="red")
 plt.plot(dates, lows, c="blue")
 # this expects a list, in this case "Highs"
-plt.title(sn, fontsize=16)
+plt.title(N, fontsize=16)
 plt.xlabel("", fontsize=12)
 plt.ylabel("Temperature (F)", fontsize=12)
 plt.tick_params(axis="both", which="major", labelsize=12)
